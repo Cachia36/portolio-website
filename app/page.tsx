@@ -453,7 +453,7 @@ export default function KylePortfolio() {
                       </Button>
                     </a>
                   ) : project.title === "Cloud Ticket App" ? (
-                    <a href="https://cloud-ticket-app-665990973538.europe-west1.run.app/" target="_blank" rel="noopener noreferrer" className="block">
+                    <a href="https://maintenance-page-gray-mu.vercel.app/" target="_blank" rel="noopener noreferrer" className="block">
                       <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
                         View Project
                         <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
@@ -485,8 +485,8 @@ export default function KylePortfolio() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`text-center space-y-4 mb-16 ${visibleSections.includes("personal projects")
-                ? "animate-in fade-in-50 slide-in-from-bottom duration-1000"
-                : "opacity-0"
+              ? "animate-in fade-in-50 slide-in-from-bottom duration-1000"
+              : "opacity-0"
               }`}
           >
             <Badge className="bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105">
@@ -506,11 +506,11 @@ export default function KylePortfolio() {
           {/* Two cards: BetWise + Dummy Project */}
           <div
             className={`grid gap-8 md:grid-cols-2 justify-center ${visibleSections.includes("personal projects")
-                ? "animate-in slide-in-from-bottom duration-1000"
-                : "opacity-0"
+              ? "animate-in slide-in-from-bottom duration-1000"
+              : "opacity-0"
               }`}
           >
-                        {/* NEW Next.js auth Card */}
+            {/* NEW Next.js auth Card */}
             <Card
               className="max-w-xl mx-auto border bg-black/40 backdrop-blur-lg border-white/10 overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:-rotate-1"
             >
@@ -564,7 +564,7 @@ export default function KylePortfolio() {
                 </a>
               </CardContent>
             </Card>
-            
+
             {/* BetWise Card */}
             <Card
               className="max-w-xl mx-auto border-0 bg-black/40 backdrop-blur-lg border border-white/10 overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:-rotate-1"
