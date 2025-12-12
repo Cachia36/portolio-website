@@ -408,8 +408,8 @@ export default function KylePortfolio() {
                       : project.title === "Cloud Ticket App"
                         ? "/cloud_ticket_app_preview.png"
                         : project.title === "CabGo - Microservices Cab Booking"
-                        ? "/CabGo_preview.png"
-                        : "/placeholder.svg?height=200&width=400"}
+                          ? "/CabGo_preview.png"
+                          : "/placeholder.svg?height=200&width=400"}
                     alt={project.title}
                     fill
                     className="object-cover group-hover:opacity-100 transition-transform duration-500"
@@ -485,8 +485,8 @@ export default function KylePortfolio() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`text-center space-y-4 mb-16 ${visibleSections.includes("personal projects")
-              ? "animate-in fade-in-50 slide-in-from-bottom duration-1000"
-              : "opacity-0"
+                ? "animate-in fade-in-50 slide-in-from-bottom duration-1000"
+                : "opacity-0"
               }`}
           >
             <Badge className="bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105">
@@ -494,76 +494,134 @@ export default function KylePortfolio() {
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-white">Personal Projects</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Personal projects I’m currently building to push my skills further. These where created with the intent of gaining experience using popular technologies and to learn.<br /><br />
-                Independently learning{" "}
-                <span className="text-red-400 font-semibold">React.js</span> and{" "}
-                <span className="text-red-400 font-semibold">TypeScript</span>
-                , as well as learning <br/><span className="text-red-400 font-semibold">JWT-Authentication</span>.
-              </p>
-              </div>
-
-              {/* Centered card */}
-              <div className="flex justify-center">
-                <Card
-                  className={`max-w-xl border-0 bg-black/40 backdrop-blur-lg border border-white/10 overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:-rotate-1 ${visibleSections.includes("personal projects")
-                    ? "animate-in slide-in-from-bottom duration-1000"
-                    : "opacity-0"
-                    }`}
-                >
-                  {/* Media placeholder */}
-                  <div className="relative h-48 bg-gradient-to-br from-purple-400 to-purple-600 group-hover:scale-110 transition-transform duration-500">
-                    <Image
-                      src="/placeholder.svg?height=200&width=400"
-                      alt="BetWise Preview"
-                      fill
-                      className="object-cover group-hover:opacity-100 transition-transform duration-500"
-                    />
-                  </div>
-
-                  <CardContent className="p-6 space-y-4">
-                    <h3 className="text-xl font-semibold text-white group-hover:text-red-300 transition-colors">
-                      BetWise (Work in Progress)
-                    </h3>
-                    <p className="text-gray-300">
-                      A football betting platform where users can place bets on games. Built with a{" "}
-                      <span className="text-red-400 font-semibold">.NET backend</span> and{" "}
-                      <span className="text-red-400 font-semibold">microservices architecture</span>.
-                      Features include <span className="text-red-400 font-semibold">3 APIs, a Gateway API, and 3 workers</span>{" "}
-                      connected through an <span className="text-red-400 font-semibold">event-driven architecture with RabbitMQ</span>.
-                    </p>
-
-                    <p className="text-gray-400">
-                      The <span className="text-green-400 font-medium">frontend will be built in React.js</span>,
-                      showcasing my frontend development and UI/UX skills.
-                    </p>
-
-                    <div className="flex flex-wrap gap-2">
-                      {[".NET", "Microservices", "RabbitMQ", "Gateway API", "Workers", "React.js"].map((tag, idx) => (
-                        <Badge
-                          key={idx}
-                          variant="secondary"
-                          className="bg-white/10 text-gray-300 hover:bg-white/20 transition-all duration-300 hover:scale-105"
-                        >
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    {/* Disabled button */}
-                    <Button
-                      variant="outline"
-                      disabled
-                      className="w-full border-white/30 text-gray-400 cursor-not-allowed"
-                    >
-                      In Development
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* More to come message */}
-              <p className="text-center text-gray-400 mt-8 italic">More to come...</p>
+              Personal projects I’m currently building to push my skills further. These where created with the intent of
+              gaining experience using popular technologies and to learn.<br /><br />
+              Independently learning{" "}
+              <span className="text-red-400 font-semibold">React.js</span> and{" "}
+              <span className="text-red-400 font-semibold">TypeScript</span>, as well as learning <br />
+              <span className="text-red-400 font-semibold">JWT-Authentication</span>.
+            </p>
           </div>
+
+          {/* Two cards: BetWise + Dummy Project */}
+          <div
+            className={`grid gap-8 md:grid-cols-2 justify-center ${visibleSections.includes("personal projects")
+                ? "animate-in slide-in-from-bottom duration-1000"
+                : "opacity-0"
+              }`}
+          >
+                        {/* NEW Next.js auth Card */}
+            <Card
+              className="max-w-xl mx-auto border bg-black/40 backdrop-blur-lg border-white/10 overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:-rotate-1"
+            >
+              {/* Dummy image */}
+              <div className="relative h-48 bg-gradient-to-br from-indigo-400 to-pink-600 group-hover:scale-110 transition-transform duration-500">
+                <Image
+                  src="/nextjs-auth-boilerplate.png?height=200&width=400"
+                  alt="Next.js Auth Boilerplate Preview"
+                  fill
+                  className="object-cover group-hover:opacity-100 transition-transform duration-500"
+                />
+              </div>
+
+              <CardContent className="p-6 space-y-4">
+                <h3 className="text-xl font-semibold text-white group-hover:text-red-300 transition-colors">
+                  Next.js Full-Stack Auth Boilerplate
+                </h3>
+                <p className="text-gray-300">
+                  A production-ready full-stack boilerplate built with{" "}
+                  <span className="text-red-400 font-semibold">Next.js 14</span> and{" "}
+                  <span className="text-red-400 font-semibold">TypeScript</span>, featuring secure authentication, JWT-based sessions, role-based access control, email verification, password resets, and a modular architecture for rapid project startup. Includes a fully set up{" "}
+                  <span className="text-red-400 font-semibold">CI workflow, Vitest</span>test suite, and clean folder structure following industry best practices.
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {["React", "TypeScript", "JWT", "REST API"].map((tag, idx) => (
+                    <Badge
+                      key={idx}
+                      variant="secondary"
+                      className="bg-white/10 text-gray-300 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+
+                {/* Dummy link button */}
+                <a
+                  href="https://next-js-authentication-boilerplate.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Button
+                    variant="outline"
+                    className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                  >
+                    View Project
+                    <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+            
+            {/* BetWise Card */}
+            <Card
+              className="max-w-xl mx-auto border-0 bg-black/40 backdrop-blur-lg border border-white/10 overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:-rotate-1"
+            >
+              <div className="relative h-48 bg-gradient-to-br from-purple-400 to-purple-600 group-hover:scale-110 transition-transform duration-500">
+                <Image
+                  src="/placeholder.svg?height=200&width=400"
+                  alt="BetWise Preview"
+                  fill
+                  className="object-cover group-hover:opacity-100 transition-transform duration-500"
+                />
+              </div>
+
+              <CardContent className="p-6 space-y-4">
+                <h3 className="text-xl font-semibold text-white group-hover:text-red-300 transition-colors">
+                  BetWise (Work in Progress)
+                </h3>
+                <p className="text-gray-300">
+                  A football betting platform where users can place bets on games. Built with a{" "}
+                  <span className="text-red-400 font-semibold">.NET backend</span> and{" "}
+                  <span className="text-red-400 font-semibold">microservices architecture</span>. Features include{" "}
+                  <span className="text-red-400 font-semibold">3 APIs, a Gateway API, and 3 workers</span>{" "}
+                  connected through an <span className="text-red-400 font-semibold">event-driven architecture with RabbitMQ</span>.
+                </p>
+
+                <p className="text-gray-400">
+                  The <span className="text-green-400 font-medium">frontend will be built in React.js</span>,
+                  showcasing my frontend development and UI/UX skills.
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {[".NET", "Microservices", "RabbitMQ", "Gateway API", "Workers", "React.js"].map((tag, idx) => (
+                    <Badge
+                      key={idx}
+                      variant="secondary"
+                      className="bg-white/10 text-gray-300 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+
+                {/* Disabled button */}
+                <Button
+                  variant="outline"
+                  disabled
+                  className="w-full border-white/30 text-gray-400 cursor-not-allowed"
+                >
+                  In Development
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* More to come message */}
+          <p className="text-center text-gray-400 mt-8 italic">More to come...</p>
+        </div>
       </section>
 
       {/* Contact Section with interactive form */}
