@@ -345,141 +345,6 @@ export default function KylePortfolio() {
         </div>
       </section>
 
-      {/* Bachelor's Projects Section with 3D hover effects */}
-      <section id="Bachelor's Degree" className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className={`text-center space-y-4 mb-16 ${visibleSections.includes("Bachelor's Degree") ? "animate-in fade-in-50 slide-in-from-bottom duration-1000" : "opacity-0"}`}
-          >
-            <Badge className="bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105">
-              Projects
-            </Badge>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white">Bachelor's Projects</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Take a look at some of the projects I've built for my Bachelor's degree in software development
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Carrozza App",
-                desc: "Car management platform with manufacturer database, car listings, and salesperson assignments.",
-                result: "Increased car management efficiency by 70%",
-                tags: ["Laravel", "PostgreSQL", "Bootstrap"],
-                gradient: "from-red-400 to-red-600",
-                grade: "66/66 (100%)(A*)",
-                module_grade: "83/100 (A*)"
-              },
-              {
-                title: "Cloud Ticket App",
-                desc: "Cloud helpdesk where users submit tickets with file uploads, and technicians can manage. Built on GCP with serverless processing and secure storage",
-                result: "Automated attachment handling and notifications to technicians when a ticket is submitted",
-                tags: [".NET MVC", "Cloud Functions", "Cloud Storage (Buckets)", "Redis"],
-                gradient: "from-orange-400 to-orange-600",
-                grade: "56/56 (100%) (A*)",
-                module_grade: "86/100 (A*)"
-              },
-              {
-                title: "CabGo - Microservices Cab Booking",
-                desc: "A distributed, event-driven cab booking system built with Microservices Architecture in .NET. Includes location-based fare calculation, real-time weather integration, and discounts on every 3rd booking. Deployed on Microsoft Azure with a Gateway API, RabbitMQ messaging, and multiple microservices for customers, bookings, payments, fares, and locations.",
-                result: "Scalable booking platform with event-driven notifications and integrated external APIs",
-                tags: [".NET 6/7", "Microservices", "GatewayAPI", "RabbitMQ", "MongoDB Atlas", "Azure", "External APIs"],
-                gradient: "from-yellow-400 to-yellow-600",
-                grade: "55/61 (90.16%) (A*)",
-                module_grade: "79/100 (A*)"
-              },
-            ].map((project, index, arr) => (
-              <Card
-                key={index}
-                className={`
-        border-0 bg-black/40 backdrop-blur-lg border border-white/10 overflow-hidden group cursor-pointer
-        transition-all duration-500 hover:scale-105 hover:-rotate-1
-        ${visibleSections.includes("Bachelor's Degree") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"}
-        ${index === arr.length - 1 ? "md:col-span-2 lg:col-span-2 mx-auto max-w-xl" : ""}
-      `}
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                {/* MEDIA AREA: make Carrozza identical to others */}
-                <div className={`relative h-48 bg-gradient-to-br ${project.gradient} group-hover:scale-110 transition-transform duration-500`}>
-                  <Image
-                    src={project.title === "Carrozza App"
-                      ? "/carrozza_app_preview.png"
-                      : project.title === "Cloud Ticket App"
-                        ? "/cloud_ticket_app_preview.png"
-                        : project.title === "CabGo - Microservices Cab Booking"
-                          ? "/CabGo_preview.png"
-                          : "/placeholder.svg?height=200&width=400"}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:opacity-100 transition-transform duration-500"
-                  />
-                </div>
-
-                <CardContent className="p-6 space-y-4">
-                  <h3 className="text-xl font-semibold text-white group-hover:text-red-300 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-300">{project.desc}</p>
-
-                  <div className="flex items-center space-x-2 text-red-400">
-                    <CheckCircle className="w-4 h-4" />
-                    <span className="text-sm font-medium">{project.result}</span>
-                  </div>
-
-                  <div className="space-y-1">
-                    <p className="text-green-400 font-medium">Project Grade: {project.grade}</p>
-                    <p className="text-gray-400 text-sm">Module Grade: {project.module_grade}</p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <Badge
-                        key={tagIndex}
-                        variant="secondary"
-                        className="bg-white/10 text-gray-300 hover:bg-white/20 transition-all duration-300 hover:scale-105"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-
-                  {/* BUTTON: keep Carrozza linked, others plain */}
-                  {project.title === "Carrozza App" ? (
-                    <a href="https://carrozzaapp.koyeb.app/" target="_blank" rel="noopener noreferrer" className="block">
-                      <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
-                        View Project
-                        <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                      </Button>
-                    </a>
-                  ) : project.title === "Cloud Ticket App" ? (
-                    <a href="https://maintenance-page-gray-mu.vercel.app/" target="_blank" rel="noopener noreferrer" className="block">
-                      <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
-                        View Project
-                        <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                      </Button>
-                    </a>
-                  ) : project.title === "CabGo - Microservices Cab Booking" ? (
-                    <a href="https://cabbookingfrontendkc.azurewebsites.net/" target="_blank" rel="noopener noreferrer" className="block">
-                      <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
-                        View Project
-                        <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                      </Button>
-                    </a>
-                  ) : (
-                    <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
-                      View Project
-                      <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                    </Button>
-                  )}
-
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Personal Projects Section */}
       <section id="personal projects" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -621,6 +486,141 @@ export default function KylePortfolio() {
 
           {/* More to come message */}
           <p className="text-center text-gray-400 mt-8 italic">More to come...</p>
+        </div>
+      </section>
+
+      {/* Bachelor's Projects Section with 3D hover effects */}
+      <section id="Bachelor's Degree" className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className={`text-center space-y-4 mb-16 ${visibleSections.includes("Bachelor's Degree") ? "animate-in fade-in-50 slide-in-from-bottom duration-1000" : "opacity-0"}`}
+          >
+            <Badge className="bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105">
+              Projects
+            </Badge>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white">Bachelor's Projects</h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Take a look at some of the projects I've built for my Bachelor's degree in software development
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {[
+              {
+                title: "Carrozza App",
+                desc: "Car management platform with manufacturer database, car listings, and salesperson assignments.",
+                result: "Increased car management efficiency by 70%",
+                tags: ["Laravel", "PostgreSQL", "Bootstrap"],
+                gradient: "from-red-400 to-red-600",
+                grade: "66/66 (100%)(A*)",
+                module_grade: "83/100 (A*)"
+              },
+              {
+                title: "Cloud Ticket App",
+                desc: "Cloud helpdesk where users submit tickets with file uploads, and technicians can manage. Built on GCP with serverless processing and secure storage",
+                result: "Automated attachment handling and notifications to technicians when a ticket is submitted",
+                tags: [".NET MVC", "Cloud Functions", "Cloud Storage (Buckets)", "Redis"],
+                gradient: "from-orange-400 to-orange-600",
+                grade: "56/56 (100%) (A*)",
+                module_grade: "86/100 (A*)"
+              },
+              {
+                title: "CabGo - Microservices Cab Booking",
+                desc: "A distributed, event-driven cab booking system built with Microservices Architecture in .NET. Includes location-based fare calculation, real-time weather integration, and discounts on every 3rd booking. Deployed on Microsoft Azure with a Gateway API, RabbitMQ messaging, and multiple microservices for customers, bookings, payments, fares, and locations.",
+                result: "Scalable booking platform with event-driven notifications and integrated external APIs",
+                tags: [".NET 6/7", "Microservices", "GatewayAPI", "RabbitMQ", "MongoDB Atlas", "Azure", "External APIs"],
+                gradient: "from-yellow-400 to-yellow-600",
+                grade: "55/61 (90.16%) (A*)",
+                module_grade: "79/100 (A*)"
+              },
+            ].map((project, index, arr) => (
+              <Card
+                key={index}
+                className={`
+        border-0 bg-black/40 backdrop-blur-lg border border-white/10 overflow-hidden group cursor-pointer
+        transition-all duration-500 hover:scale-105 hover:-rotate-1
+        ${visibleSections.includes("Bachelor's Degree") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"}
+        ${index === arr.length - 1 ? "md:col-span-2 lg:col-span-2 mx-auto max-w-xl" : ""}
+      `}
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                {/* MEDIA AREA: make Carrozza identical to others */}
+                <div className={`relative h-48 bg-gradient-to-br ${project.gradient} group-hover:scale-110 transition-transform duration-500`}>
+                  <Image
+                    src={project.title === "Carrozza App"
+                      ? "/carrozza_app_preview.png"
+                      : project.title === "Cloud Ticket App"
+                        ? "/cloud_ticket_app_preview.png"
+                        : project.title === "CabGo - Microservices Cab Booking"
+                          ? "/CabGo_preview.png"
+                          : "/placeholder.svg?height=200&width=400"}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:opacity-100 transition-transform duration-500"
+                  />
+                </div>
+
+                <CardContent className="p-6 space-y-4">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-red-300 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-300">{project.desc}</p>
+
+                  <div className="flex items-center space-x-2 text-red-400">
+                    <CheckCircle className="w-4 h-4" />
+                    <span className="text-sm font-medium">{project.result}</span>
+                  </div>
+
+                  <div className="space-y-1">
+                    <p className="text-green-400 font-medium">Project Grade: {project.grade}</p>
+                    <p className="text-gray-400 text-sm">Module Grade: {project.module_grade}</p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <Badge
+                        key={tagIndex}
+                        variant="secondary"
+                        className="bg-white/10 text-gray-300 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  {/* BUTTON: keep Carrozza linked, others plain */}
+                  {project.title === "Carrozza App" ? (
+                    <a href="https://carrozzaapp.koyeb.app/" target="_blank" rel="noopener noreferrer" className="block">
+                      <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                        View Project
+                        <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                      </Button>
+                    </a>
+                  ) : project.title === "Cloud Ticket App" ? (
+                    <a href="https://maintenance-page-gray-mu.vercel.app/" target="_blank" rel="noopener noreferrer" className="block">
+                      <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                        View Project
+                        <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                      </Button>
+                    </a>
+                  ) : project.title === "CabGo - Microservices Cab Booking" ? (
+                    <a href="https://cabbookingfrontendkc.azurewebsites.net/" target="_blank" rel="noopener noreferrer" className="block">
+                      <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                        View Project
+                        <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                      </Button>
+                    </a>
+                  ) : (
+                    <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                      View Project
+                      <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    </Button>
+                  )}
+
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
