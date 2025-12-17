@@ -138,7 +138,7 @@ export default function KylePortfolio() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              {["home", "services", "Bachelor's Degree", "personal projects", "contact"].map((section) => (
+              {["home", "services", "personal projects", "Bachelor's Degree", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -165,7 +165,7 @@ export default function KylePortfolio() {
           {isMenuOpen && (
             <div className="md:hidden bg-black/90 backdrop-blur-lg border-t border-red-500/20 animate-in slide-in-from-top duration-300">
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {["home", "services", "Bachelor's Degree", "personal projects", "contact"].map((section) => (
+                {["home", "services", "personal projects", "Bachelor's Degree", "contact"].map((section) => (
                   <button
                     key={section}
                     onClick={() => scrollToSection(section)}
@@ -482,6 +482,47 @@ export default function KylePortfolio() {
                 </Button>
               </CardContent>
             </Card>
+
+            {/* Portfolio Website Card (CENTERED) */}
+            <Card className="md:col-span-2 max-w-xl mx-auto border-0 bg-black/40 backdrop-blur-lg border border-white/10 overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:-rotate-1">
+              <div className="relative h-48 bg-gradient-to-br from-red-400 to-red-600 group-hover:scale-110 transition-transform duration-500">
+                <Image
+                  src="/placeholder.svg?height=200&width=400"
+                  alt="Kyle Portfolio Website Preview"
+                  fill
+                  className="object-cover group-hover:opacity-100 transition-transform duration-500"
+                />
+              </div>
+
+              <CardContent className="p-6 space-y-4">
+                <h3 className="text-xl font-semibold text-white group-hover:text-red-300 transition-colors">
+                  Portfolio Website (Next.js)
+                </h3>
+
+                <p className="text-gray-300">
+                  My personal portfolio website built with{" "}
+                  <span className="text-red-400 font-semibold">Next.js</span> to showcase my projects, services, and contact
+                  flow — focused on performance, SEO, and a clean UI.
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {["Next.js", "TypeScript", "Tailwind CSS", "SEO"].map((tag, idx) => (
+                    <Badge
+                      key={idx}
+                      variant="secondary"
+                      className="bg-white/10 text-gray-300 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+
+                <Button variant="outline" disabled className="w-full border-white/30 text-gray-400 cursor-not-allowed">
+                  In Development
+                </Button>
+              </CardContent>
+            </Card>
+
           </div>
 
           {/* More to come message */}
