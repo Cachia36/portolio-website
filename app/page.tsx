@@ -32,6 +32,7 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "600", "700"
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["600", "700"] })
 
 import Image from "next/image"
+
 import Logo from "@/components/logo"
 
 export default function KylePortfolio() {
